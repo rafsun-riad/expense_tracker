@@ -13,7 +13,13 @@ export default function App() {
       <StatusBar style="auto" />
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="ExpenseOverview" component={ExpenseOverview} />
+          <Stack.Screen
+            name="ExpenseOverview"
+            component={ExpenseOverview}
+            options={{
+              headerShown: false,
+            }}
+          />
           <Stack.Screen name="ManageExpense" component={ManageExpense} />
         </Stack.Navigator>
       </NavigationContainer>
