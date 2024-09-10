@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import RecentExpenses from '../screens/RecentExpenses';
 import AllExpenses from '../screens/AllExpenses';
 import { GlobalStyle } from '../constants/styles';
+import IconButton from './IconButton';
 
 const BottomTabs = createBottomTabNavigator();
 
@@ -15,6 +16,9 @@ function ExpenseOverview() {
         headerTintColor: 'white',
         tabBarStyle: { backgroundColor: GlobalStyle.color.primary500 },
         tabBarActiveTintColor: GlobalStyle.color.accent500,
+        headerRight: ({ tintColor }) => (
+          <IconButton name="add" size={24} color={tintColor} />
+        ),
       }}
     >
       <BottomTabs.Screen
@@ -35,7 +39,7 @@ function ExpenseOverview() {
           title: 'All Expenses',
           tabBarLabel: 'All Expenses',
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="calender" size={size} color={color} />
+            <Ionicons name="calendar" size={size} color={color} />
           ),
         }}
       />
